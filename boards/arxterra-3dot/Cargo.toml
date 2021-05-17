@@ -1,0 +1,22 @@
+[package]
+name = "arxrobot"
+version = "0.1.0"
+authors = ["Rahix <rahix@rahix.de>"]
+edition = "2018"
+
+[features]
+default = ["rt"]
+rt = ["atmega32u4-hal/rt"]
+
+[dependencies]
+atmega32u4-hal = { path = "../../chips/atmega32u4-hal/" }
+avr-hal-generic = { path = "../../avr-hal-generic/" }
+
+[dependencies.rmp]
+rmp = "^0.8"
+
+[dev-dependencies]
+panic-halt = "0.2.0"
+nb = "0.1.2"
+ufmt = "0.1.0"
+avr-device = "0.3"

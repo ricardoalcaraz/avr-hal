@@ -68,12 +68,11 @@ pub use crate::hal::usart;
 ///
 /// [delay_ms]: fn.delay_ms.html
 /// [delay_us]: fn.delay_us.html
-pub type Delay = hal::delay::Delay<hal::clock::MHz16>;
+pub type Delay = hal::delay::Delay<hal::clock::MHz8>;
 
 /// Wait (busy spin) for `ms` milliseconds
 pub fn delay_ms(ms: u16) {
     use prelude::*;
-
     Delay::new().delay_ms(ms)
 }
 
@@ -197,7 +196,7 @@ pub mod pwm {
 /// ```
 ///
 /// [ex-serial]: https://github.com/Rahix/avr-hal/blob/master/boards/arduino-leonardo/examples/leonardo-serial.rs
-pub type Serial<IMODE> = hal::usart::Usart1<hal::clock::MHz16, IMODE>;
+pub type Serial<IMODE> = hal::usart::Usart1<hal::clock::MHz8, IMODE>;
 
 /// I2C Master on pins `D2` (SDA) and `D3` (SCL)
 ///
@@ -217,7 +216,7 @@ pub type Serial<IMODE> = hal::usart::Usart1<hal::clock::MHz16, IMODE>;
 /// ```
 ///
 /// [ex-i2c]: https://github.com/Rahix/avr-hal/blob/master/boards/arduino-leonardo/examples/leonardo-i2cdetect.rs
-pub type I2cMaster<M> = hal::i2c::I2cMaster<hal::clock::MHz16, M>;
+pub type I2cMaster<M> = hal::i2c::I2cMaster<hal::clock::MHz8, M>;
 #[doc(hidden)]
 #[deprecated = "Please use `I2cMaster` instead of `I2c`"]
 pub type I2c<M> = I2cMaster<M>;

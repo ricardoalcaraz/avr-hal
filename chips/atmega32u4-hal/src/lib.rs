@@ -81,7 +81,6 @@ pub mod spi {
 pub mod usart {
     use crate::port::portd;
     pub use avr_hal_generic::usart::*;
-
     /// Serial interface based on ATmega32U4's USART1 peripheral
     pub type Usart1<CLOCK, IMODE> = Usart<
         crate::pac::USART1,

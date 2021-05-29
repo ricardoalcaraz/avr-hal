@@ -16,6 +16,7 @@ fn main() -> ! {
         pins.d1.into_output(&mut pins.ddr),
         57600.into_baudrate(),
     );
+    let mut usb_serial = arduino_leonardo::Serial::
 
     ufmt::uwriteln!(&mut serial, "Hello from Arduino!\r").void_unwrap();
 
